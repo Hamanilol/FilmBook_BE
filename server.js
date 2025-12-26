@@ -5,6 +5,7 @@ const FavoritedRouter = require("./routes/FavoritedRouter")
 
 const PORT = process.env.PORT || 3000
 
+// const AuthRouter = require("./routes/AuthRouter")
 const db = require("./db")
 const { Ticket } = require("./models")
 const { Favorited } = require("./models/favorited")
@@ -16,8 +17,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(morgan("dev"))
 
 
-
-app.use('/favorite', FavoritedRouter)
+// app.use("/auth", AuthRouter)
+app.use("/favorite", FavoritedRouter)
 
 app.get("/tickets", async (req, res) => {
   try {
