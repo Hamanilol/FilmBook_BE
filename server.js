@@ -4,6 +4,7 @@ const cors = require("cors")
 
 const PORT = process.env.PORT || 3000
 
+const AuthRouter = require("./routes/AuthRouter")
 const db = require("./db")
 const { Ticket } = require("./models")
 const { Favorited } = require("./models/favorited")
