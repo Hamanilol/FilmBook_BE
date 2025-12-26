@@ -1,8 +1,8 @@
 const { Schema } = require("mongoose")
 
-const favoritedSchema = new mongoose.Schema(
+const favoritedSchema = new Schema(
   {
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    owner: { type: Schema.Types.ObjectId, ref: 'User' },
     movie: {type: String, required: true }
   },
   { timestamps: true }
