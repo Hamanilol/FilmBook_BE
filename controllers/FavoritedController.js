@@ -22,7 +22,7 @@ const AddFavorite = async (req, res) => {
 const UpdateFavorited = async (req, res) => {
   try {
     const post = await Favotrited.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
+      new: true,
     })
     res.status(200).send(post)
   } catch (error) {
@@ -33,7 +33,7 @@ const UpdateFavorited = async (req, res) => {
 const DeleteFavorited = async (req, res) => {
   try {
     await Post.deleteOne({ _id: req.params.id })
-    res.status(200).send({ msg: 'Removed from Favorites', id: req.params.id })
+    res.status(200).send({ msg: "Removed from Favorites", id: req.params.id })
   } catch (error) {
     throw error
   }
@@ -43,5 +43,5 @@ module.exports = {
   GetFavorite,
   AddFavorite,
   UpdateFavorited,
-  DeleteFavorited
+  DeleteFavorited,
 }
