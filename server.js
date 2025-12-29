@@ -22,7 +22,7 @@ app.use(morgan("dev"))
 app.use("/auth", AuthRouter)
 app.use("/ticket", TicketRouter)
 app.use("/posts", PostRouter)
-// app.use("/favorite", FavoritedRouter)
+app.use("/favorite", FavoritedRouter)
 
 app.listen(PORT, () => {
   console.log(`Express Server Running on Port`, PORT, `. . .`)
