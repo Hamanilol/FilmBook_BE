@@ -5,10 +5,10 @@ const favoritedSchema = require("./favorited")
 
 const User = mongoose.model("User", userSchema)
 const Ticket = mongoose.model("Ticket", ticketSchema)
-const Favotrited = mongoose.model("Favorited", favoritedSchema)
+const Favorited = mongoose.model("Favorited", favoritedSchema)
 
 module.exports = {
   Ticket,
-  Favotrited,
+  Favorited,
   User,
 }

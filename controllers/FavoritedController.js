@@ -1,10 +1,9 @@
-const { Favotrited } = require("../models")
+const { Favorited } = require("../models")
 
-const { favorited } = require
 const GetFavorite = async (req, res) => {
   try {
-    const posts = await Favotrited.find({})
-    res.status(200).send(favorited)
+    const favorites = await Favorited.find({}) // get favorites for logged in user
+    res.status(200).send(favorites)
   } catch (error) {
     throw error
   }
@@ -12,8 +11,8 @@ const GetFavorite = async (req, res) => {
 
 const AddFavorite = async (req, res) => {
   try {
-    const post = await Favotrited.create(req.body)
-    res.status(200).send(post)
+    const favorite = await Favorited.create({ ...req.body,}) 
+    res.status(200).send(favorite)
   } catch (error) {
     throw error
   }
@@ -21,10 +20,8 @@ const AddFavorite = async (req, res) => {
 
 const UpdateFavorited = async (req, res) => {
   try {
-    const post = await Favotrited.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    })
-    res.status(200).send(post)
+    const favorite = await Favorited.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.status(200).send(favorite)
   } catch (error) {
     throw error
   }
@@ -32,7 +29,7 @@ const UpdateFavorited = async (req, res) => {
 
 const DeleteFavorited = async (req, res) => {
   try {
-    await Post.deleteOne({ _id: req.params.id })
+    await Favorited.deleteOne({ _id: req.params.id })
     res.status(200).send({ msg: "Removed from Favorites", id: req.params.id })
   } catch (error) {
     throw error
