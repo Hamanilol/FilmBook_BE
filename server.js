@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 3000
 const AuthRouter = require("./routes/AuthRouter")
 const FavoritedRouter = require("./routes/FavoritedRouter")
 const TicketRouter = require("./routes/TicketRouter")
+const PostRouter = require("./routes/PostRouter")
 
 const db = require("./db")
 const { Ticket } = require("./models/ticket")
@@ -20,6 +21,7 @@ app.use(morgan("dev"))
 
 app.use("/auth", AuthRouter)
 app.use("/ticket", TicketRouter)
+app.use("/posts", PostRouter)
 // app.use("/favorite", FavoritedRouter)
 
 app.listen(PORT, () => {
