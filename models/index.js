@@ -6,12 +6,12 @@ const postSchema = require("./Post")
 
 const User = mongoose.model("User", userSchema)
 const Ticket = mongoose.model("Ticket", ticketSchema)
-const Favotrited = mongoose.model("Favorited", favoritedSchema)
+const Favorited = mongoose.model("Favorited", favoritedSchema)
 const Post = mongoose.model("Post", postSchema)
 
 module.exports = {
   Ticket,
-  Favotrited,
+  Favorited,
   User,
   Post,
 }
