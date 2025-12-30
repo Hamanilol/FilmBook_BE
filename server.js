@@ -1,6 +1,7 @@
 const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
+require("dotenv").config()
 
 const PORT = process.env.PORT || 3000
 
@@ -8,6 +9,7 @@ const AuthRouter = require("./routes/AuthRouter")
 const FavoritedRouter = require("./routes/FavoritedRouter")
 const TicketRouter = require("./routes/TicketRouter")
 const PostRouter = require("./routes/PostRouter")
+const MovieRouter = require("./routes/MovieRouter")
 
 const db = require("./db")
 const { Ticket } = require("./models/ticket")
@@ -23,6 +25,7 @@ app.use("/auth", AuthRouter)
 app.use("/ticket", TicketRouter)
 app.use("/posts", PostRouter)
 app.use("/favorite", FavoritedRouter)
+app.use("/movies", MovieRouter)
 
 app.listen(PORT, () => {
   console.log(`Express Server Running on Port`, PORT, `. . .`)
