@@ -2,7 +2,8 @@ const { Favorited } = require("../models")
 
 const GetFavorite = async (req, res) => {
   try {
-    const favorites = await Favorited.find({})
+    const { id } = res.locals.payload
+    const favorites = await Favorited.find({ owner: id })
     res.status(200).send(favorites)
   } catch (error) {
     throw error
@@ -11,7 +12,8 @@ const GetFavorite = async (req, res) => {
 
 const AddFavorite = async (req, res) => {
   try {
-    const favorite = await Favorited.create(req.body)
+    const { id } = res.locals.payload
+    const favorite = await Favorited.create({ ...req.body, owner: id })
     res.status(200).send(favorite)
   } catch (error) {
     throw error
