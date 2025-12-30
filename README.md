@@ -28,15 +28,7 @@
 ##### The project was deployed and can be viewed [here](filmbook.surge.sh).
 ***
 
-### ***Screenshots***
 
-![Alt text](/client/public/images/100.png)
-
-
-
-![Alt text](/client/public/images/200.png)
-
-***
 
 ### ***Future Updates***
 
